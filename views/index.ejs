@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Mini Message Board</title>
+</head>
+<body>
+    <div class="messages">
+        <% messages.map((message)=>{ %>
+            <div class="message">
+                <div class="text"><%= message.text %></div>
+                <div class="user"><%= message.user %></div>
+                <div class="added"><%= message.added %></div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
