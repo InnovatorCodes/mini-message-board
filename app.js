@@ -12,4 +12,9 @@ app.use(express.static(assetsPath));
 
 app.use(express.urlencoded({ extended: true }));
 app.use('/', router)
+app.use((err,req,res,next)=>{
+    console.log('Page Not Found: '+ req.url);
+    res.status(err.statusCode || 500).render('error',{title: err.message});
+})
+
 app.listen(8080,()=>console.log('Listening on port 8080'));

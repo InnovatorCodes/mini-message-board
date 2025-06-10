@@ -9,17 +9,25 @@
     border: none;
     outline: none;
 }
+:root{
+    --header-bg: #212727;
+    --header-btn: #247de2;
+    --body-bg: #2F3E46;
+    --content-bg: rgb(34, 47, 58);
+    --content-btn: #38a9ad;
+    --content-btn-hover: #129196;
+}
 body{
     display: flex;
     flex-direction: column;
-    background-color: #2F3E46;
+    background-color: var(--body-bg);
     gap: 1rem;
 }
 .header{
     display: flex;
     gap: 1rem;
     align-items: center;
-    background-color: #212727;
+    background-color: var(--header-bg);
     padding: 2rem;
 }
 h1.title{
@@ -32,10 +40,11 @@ button{
     padding: 0.5rem 1rem;
     font-weight: 500;
     font-size: 1rem;
-    background-color: #ffffff;
-    color: black;
+    background-color: var(--header-btn);
+    color: white;
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 .main{
     padding: 2rem;
@@ -48,7 +57,7 @@ button{
 .message{
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(34, 47, 58);
+    background-color: var(--content-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,12 +87,12 @@ button{
     display: block;
 }
 .view{
-    background-color: #38a9ad;
+    background-color: var(--content-btn);
     transition: all 0.3s ease-in-out;
     color: white;
 }
 button.view:hover{
-    background-color: #129196;
+    background-color: var(--content-btn-hover);
     cursor: pointer;
 }
 form{
@@ -97,7 +106,7 @@ form{
     padding: 1rem;
     width: min(50%,600px);
     border-radius: 0.5rem;
-    background-color: rgb(34, 47, 58)
+    background-color: var(--content-bg)
 }
 form>div{
     display: flex;
@@ -122,20 +131,20 @@ input{
     width: 100%;
 }
 input:hover,textarea:hover, input:focus,textarea:focus{
-    outline: 1px solid #129196;
+    outline: 1px solid var(--content-btn-hover);
 }
 button.post{
     align-self: center;
-    background-color: #38a9ad;
+    background-color: var(--content-btn);
     color: white;
     font-size: 1.2rem;
     transition: all 0.25s ease-in-out;
 }
 button.post:hover{
-    background-color: #129196;
+    background-color: var(--content-btn-hover);
     cursor: pointer;
 }
-.message-details{
+.message-details, .error{
     display: flex;
     flex-direction: column;
     font-size: 1.4rem;
@@ -145,12 +154,12 @@ button.post:hover{
     gap: 1rem;
     width: min(50%,600px);
     border-radius: 0.5rem;
-    background-color: rgb(34, 47, 58)
+    background-color: var(--content-bg);
 }
 .message-details .text{
     word-break: break-all;
 }
-.message-details button{
+.message-details button, .error button{
     display: flex;
     font-size: 1.3rem;
     justify-content: center;
@@ -158,6 +167,10 @@ button.post:hover{
     gap: 0.6rem;
     cursor: pointer;
     width: 100%;
+    background-color: var(--content-btn);
+}
+a{
+    text-decoration: none;
 }
 img{
     width: 1.3rem;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <title>Message | Mini Message Board</title>
+</head>
+<body>
+    <%- include('header', {type: 'message'}) %>
+    <div class="error">
+        <h2>Oops! <%= title %></h2>
+        <div>We couldn't find the message or page you were trying to view. It might have been removed or the link could be incorrect.</div>
+        <div>(Error Code: 404)</div>
+        <a href="/"><button><img src="/left-arrow.svg" alt="Left Arrow"> Back to Messages</button></a>
+    </div>
+</body>
+</html>

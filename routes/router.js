@@ -1,4 +1,5 @@
 const { Router }= require('express');
+const asyncHandler = require("express-async-handler");
 
 const router=Router();
 
@@ -15,37 +16,47 @@ const messages = [
   }
 ];
 
-router.get('/', allMessages);
-
-router.get('/new', newMessage)
-router.post('/new', postMessage);
-
-router.get('/messages/:id', showMessage)
-
-async function allMessages(req, res){
+const allMessages = asyncHandler((req, res)=>{
   res.render('index', {messages: messages})
-}
+})
 
-async function newMessage(req, res){
+const newMessage = asyncHandler((req, res)=>{
   res.render('form');
-}
+})
 
-async function postMessage(req,res){
+const postMessage = asyncHandler((req,res)=>{
   messages.push({text: req.body.text, user: req.body.name, added: new Date() });
-  console.log(messages.length);
   res.redirect('/')
+})
+
+class NotFoundError extends Error {
+  constructor(message) {
+    super(message);
+    this.statusCode = 404;
+    // So the error is neat when stringified. NotFoundError: message instead of Error: message
+    this.name = "NotFoundError";
+  }
 }
 
-async function showMessage(req,res){
+const showMessage = asyncHandler((req,res)=>{
   const id=req.params.id
   if(id<messages.length){
     const message=messages[id];
     res.render('message', {message: message})
   }
   else{
-    res.status(404).render('error');
+    throw new NotFoundError('Message Not Found');
   }
-}
+})
 
+router.get('/', allMessages);
+
+router.get('/new', newMessage)
+router.post('/new', postMessage);
+
+router.get('/messages/:id', showMessage)
+router.use((req,res)=>{
+  throw new NotFoundError('Page Not Found');
+})
 module.exports=router;
 
