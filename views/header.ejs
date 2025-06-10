@@ -2,7 +2,10 @@
     <h1 class="title">Mini Message Board</h1>
     <% if(type=='new') { %>
         <a href="/"><button>Home</button></a>
-    <% } else{ %>
+    <% } else if(type=='index'){ %>
+        <a href="/new"><button>New Message</button></a>
+    <% } else { %>
+        <a href="/"><button>Home</button></a>
         <a href="/new"><button>New Message</button></a>
     <% } %>
 </div>

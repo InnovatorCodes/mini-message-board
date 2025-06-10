@@ -14,14 +14,14 @@
     <div class="main">
         <div class="messages">
             <% messages.map((message,index)=>{ %>
-                <% const date=message.added.getDate()+'/'+(parseInt(message.added.getMonth())+1)+'/'+message.added.getFullYear() %>
+                <% const date=message.added.toLocaleDateString() %>
                 <div class="message">
                     <div class="brief">
                         <div class="text"><%= message.text %></div>
                         <div class="user">Posted by: <%= message.user %></div>
                         <div class="added">Date: <%= date %></div>
                     </div>
-                    <button class="view" data-id="<%= index %>">View</button>
+                    <a href="/messages/<%= index %>"><button class="view">View</button></a>
                 </div>
             <% }) %>
         </div>
