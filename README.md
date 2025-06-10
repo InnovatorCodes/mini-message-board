@@ -37,7 +37,7 @@ Make sure you have **Node.js** installed. You can download it from [nodejs.org](
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/InnovatorCodes/mini-message-board.git](https://github.com/InnovatorCodes/mini-message-board.git)
+    git clone https://github.com/InnovatorCodes/mini-message-board.git
     ```
 
 2.  **Navigate into the project directory:**
@@ -67,22 +67,6 @@ Make sure you have **Node.js** installed. You can download it from [nodejs.org](
     Visit `http://localhost:8080` to access the Mini Message Board.
 
 ---
-
-## Project Structure
-
-mini-message-board/
-├── public/                 # Static assets (CSS, images, client-side JS)
-│   └── stylesheets/
-│       └── style.css
-├── routes/                 # Express route definitions
-│   ├── index.js            # Main routes for messages
-├── views/                  # EJS templates
-│   ├── form.ejs            # Template for new message form
-│   └── index.ejs           # Template for displaying messages
-├── app.js                  # Main application file (Express setup, middleware)
-├── package.json            # Project metadata and dependencies
-└── README.md
-
 
 ## Contributing
 
