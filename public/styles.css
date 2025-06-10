@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: white;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #2F3E46;
+    gap: 1rem;
+}
+.header{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: #212727;
+    padding: 2rem;
+}
+h1.title{
+    font-weight: 700;
+    font-size: 3rem;
+    margin-right: auto;
+}
+button{
+    height: min-content;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 0.5rem;
+}
+.main{
+    padding: 2rem;
+}
+.messages{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(500px, 1fr));
+    gap: 1rem;
+}
+.message{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(34, 47, 58);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+}
+.brief{
+    max-width: 80%;
+}
+.brief>*{
+    word-break: break-all;
+}
+.text{
+    font-size: 1.5rem;
+    font-weight: 700;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden;    /* Hides any content that overflows the element's box */
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+.user{
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden;    /* Hides any content that overflows the element's box */
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+.view{
+    background-color: #38a9ad;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+button.view:hover{
+    background-color: #129196;
+    cursor: pointer;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    align-self: center;
+    padding: 1rem;
+    width: min(50%,600px);
+    border-radius: 0.5rem;
+    background-color: rgb(34, 47, 58)
+}
+form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: start;
+    width: 100%;
+}
+textarea{
+    width: 100%;
+    border-radius: 0.5rem;
+    resize: none;
+    color: black;
+    font-size: 1.1rem;
+    padding: 0.25rem;
+}
+input{
+    border-radius: 0.6rem;
+    font-size: 1.1rem;
+    color: black;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+}
+button.post{
+    align-self: center;
+    background-color: #38a9ad;
+    color: white;
+    transition: all 0.25s ease-in-out;
+}
+button.post:hover{
+    background-color: #129196;
+    cursor: pointer;
+}

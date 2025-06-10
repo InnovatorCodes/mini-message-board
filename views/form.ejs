@@ -1,7 +1,27 @@
-<form action="/new" method="POST">
-    <label for="content">Message: </label>
-    <textarea name="text" id="content"></textarea>
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="name">
-    <button type="submit">Post Message</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <title>New Message | Mini Message Board</title>
+</head>
+<body>
+    <%- include('header', {type: 'new'}) %>
+    <form action="/new" method="POST">
+        <h1>New Message</h1>
+        <div>
+            <label for="content">Message: </label>
+            <textarea name="text" id="content" rows="5" cols="70"  required></textarea>
+        </div>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <button type="submit" class="post">Post Message</button>
+    </form>
+</body>
+</html>
