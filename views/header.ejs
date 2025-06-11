@@ -1,11 +1,13 @@
 <div class="header">
     <h1 class="title">Mini Message Board</h1>
-    <% if(type=='new') { %>
-        <a href="/"><button>Home</button></a>
-    <% } else if(type=='index'){ %>
-        <a href="/new"><button>New Message</button></a>
-    <% } else { %>
-        <a href="/"><button>Home</button></a>
-        <a href="/new"><button>New Message</button></a>
-    <% } %>
+    <div class="header-btns">
+        <% if(type=='new') { %>
+            <a href="/"><button>Home</button></a>
+        <% } else if(type=='index'){ %>
+            <a href="/new"><button>New Message</button></a>
+        <% } else { %>
+            <a href="/"><button>Home</button></a>
+            <a href="/new"><button>New Message</button></a>
+        <% } %>
+    </div>
 </div>
